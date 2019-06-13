@@ -5,7 +5,8 @@ namespace CyclicGraphDetectorWebApp.App_Start
 {
     using System;
     using System.Web;
-
+    using CyclicGraphDetectorBusinessLayer;
+    using CyclicGraphDetectorDataAccess;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -61,6 +62,8 @@ namespace CyclicGraphDetectorWebApp.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ICsvUploadManager>().To<CsvUploadManager>();
+            kernel.Bind <ICsvContentDataRepository>().To<CsvContentDataRepository>();
         }        
     }
 }

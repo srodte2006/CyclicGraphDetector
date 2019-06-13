@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Available File to Download";
 }
-@model List<CsvUploaderApp.Models.CsvFileContentModel>
+@model List<CyclicGraphDetectorWebApp.Models.CsvFileContentModel>
 <h2>Csv File with the content representing Tree Like Structure</h2>
 @if (ViewBag.IsDownLoadAvailable != null && ViewBag.IsDownLoadAvailable)
 {
@@ -21,7 +21,7 @@
               <tr>
                   <td>@file.FileName</td>
                   <td>
-                      @Html.ActionLink("DownLoad", "DownLoad", "UploadCsv", new {@id = @file.Id}, new {@class = "navbar-brand"})
+                      @Html.ActionLink("DownLoad", "DownLoad", "UploadCsv", new {@id = file.Id}, new {@class = "navbar-brand"})
                   </td>
               </tr>
           }
